@@ -27,6 +27,8 @@ define apt::setting (
   Boolean $notify_update                              = true,
 ) {
 
+  include ::apt
+
   if $content and $source {
     fail(translate('apt::setting cannot have both content and source'))
   }
